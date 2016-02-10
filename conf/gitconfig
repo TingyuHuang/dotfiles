@@ -1,0 +1,13 @@
+[user]
+	name = TingyuHuang
+	email = soytingyuhuang@gmail.com
+[core]
+	editor = vim
+[color]
+	ui = true
+[alias]
+	df = diff
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
