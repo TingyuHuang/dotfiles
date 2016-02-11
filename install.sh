@@ -4,6 +4,11 @@ UNAME=`uname`
 DOTFILES_DIR=`dirname $0`/conf
 DOTFILES_BAK=`dirname $0`/bak
 
+realpath ()
+{
+	[[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
+}
+
 print_var ()
 {
 	echo "UNAME=${UNAME}"
@@ -48,7 +53,7 @@ install_common ()
 
 		echo "installing $file_basename"
 
-		ln -s `readlink -f ${file}` ~/.$file_basename
+		ln -s `realpath ${file}` ~/.$file_basename
 		echo "done"
 	done
 
