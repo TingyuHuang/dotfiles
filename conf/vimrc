@@ -25,7 +25,7 @@ Plugin 'tpope/vim-fugitive'
 "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Avoid a name conflict with L9
 "Plugin 'user/L9', {'name': 'newL9'}
-
+Plugin 'altercation/vim-colors-solarized'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -48,3 +48,6 @@ filetype plugin indent on    " required
 :set list
 :set cc=80
 syntax enable
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized

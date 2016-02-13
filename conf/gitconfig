@@ -1,13 +1,37 @@
-[user]
-	name = TingyuHuang
-	email = soytingyuhuang@gmail.com
-[core]
-	editor = vim
-[color]
-	ui = true
 [alias]
+
 	df = diff
 	co = checkout
 	ci = commit
 	st = status
 	br = branch
+
+[core]
+
+	editor = vim
+
+[color]
+
+	ui = true
+
+[color "branch"]
+
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+
+	meta = yellow bold
+	frag = magenta bold # line info
+	old = red # deletions
+	new = green # additions
+
+[color "status"]
+
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[user]
+	email = TingyuHuang@users.noreply.github.com
