@@ -47,6 +47,9 @@ filetype plugin indent on    " required
 :set listchars=tab:>-,trail:~
 :set list
 :set cc=80
+:set tabstop=4
+:set shiftwidth=4
+:set softtabstop=4
 syntax enable
 set background=dark
 let g:solarized_termcolors=256
