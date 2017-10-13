@@ -1,6 +1,7 @@
 [alias]
 
 	df = diff
+	dfch = diff --cached
 	co = checkout
 	ci = commit
 	st = status
