@@ -49,7 +49,7 @@ install_common ()
 
 		echo "installing $file_basename"
 
-		ln -s `realpath ${file}` ~/.$file_basename
+		ln -sf `realpath ${file}` ~/.$file_basename
 		echo "done"
 	done
 
