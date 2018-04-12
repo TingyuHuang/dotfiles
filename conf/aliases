@@ -10,10 +10,11 @@ alias -- -="cd -"
 alias d="cd ~/Documents"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias p="cd ~/Develop/projects"
+alias p="cd ~/workspace/projects"
 alias g="git"
 alias h="history"
 alias j="jobs"
+alias grpe="grep"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
