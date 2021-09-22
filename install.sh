@@ -28,7 +28,7 @@ install_for_linux ()
 	apt-get -v > /dev/null 2>&1 || { echo "no apt-get found. exit 1" >&2; exit 1; }
 
 	apt-get update
-	sudo apt-get install git vim screen
+	sudo apt-get install git vim screen zsh
 }
 
 install_common ()
@@ -56,6 +56,11 @@ install_common ()
 	echo "install VundleVim"
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	vim +PluginInstall +qall
+
+	echo "install zsh"
+	sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+	git clone https://github.com/caiogondim/bullet-train.zsh.git
+	cp bullet-train.zsh/bullet-train.zsh-theme ~/.oh-my-zsh/themes
 }
 
 main ()
