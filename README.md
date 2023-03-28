@@ -2,12 +2,17 @@
 
 To install dotfiles, run following commands
 
-<pre><code>install.sh
+```=script
+# install git
+sudo apt install git
+
+# install dotfiles
+cd ~ && git clone https://github.com/TingyuHuang/dotfiles.git && cd dotfiles && ./install.sh
 source ~/.bashrc
-</code></pre>
+```
 
 which backup your dotfiles to dotfiles/bak/ and link new dotfiles to your home directory.
 
 # Uninstall dotfiles
 
-Not implement yet
+Not available.
