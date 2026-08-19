@@ -117,10 +117,10 @@ install_oh_my_zsh ()
 
 	log "install bullet-train theme"
 	tmp="$(mktemp -d)"
-	trap 'rm -rf "${tmp}"' RETURN
 	git clone --depth 1 https://github.com/caiogondim/bullet-train.zsh.git "${tmp}/bullet-train"
 	mkdir -p "${themes}"
 	cp "${tmp}/bullet-train/bullet-train.zsh-theme" "${themes}/"
+	rm -rf "${tmp}"
 }
 
 main ()
