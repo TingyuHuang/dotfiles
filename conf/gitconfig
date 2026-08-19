@@ -15,7 +15,7 @@
 
 [color]
 
-	ui = true
+	ui = auto
 
 [color "branch"]
 
