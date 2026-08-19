@@ -7,7 +7,17 @@ ZSH_THEME="bullet-train"
 
 # Which plugins to load. Standard ones live in $ZSH/plugins, custom ones in
 # $ZSH_CUSTOM/plugins. Add wisely, they slow down shell startup.
-plugins=(git)
+#
+#   zsh-autosuggestions      grey hint from history while typing; the right
+#                            arrow or End accepts it, and it is only a
+#                            suggestion until you do
+#   zsh-syntax-highlighting  colours the command line as you type, unknown
+#                            commands turn red
+#
+# Both are cloned into $ZSH_CUSTOM/plugins by install.sh.
+# zsh-syntax-highlighting must stay last: it wraps the line editor's widgets
+# and anything loaded after it ends up unhighlighted.
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 # Skip oh-my-zsh's "insecure completion directories" check.
 ZSH_DISABLE_COMPFIX="true"

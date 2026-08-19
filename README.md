@@ -9,7 +9,7 @@ symlinked into `$HOME`.
 | `conf/bash_profile` | `~/.bash_profile` | Bash options, completion, and dotfile loading |
 | `conf/bash_prompt` | `~/.bash_prompt` | Solarized bash prompt with git status |
 | `conf/bashrc` | `~/.bashrc` | Sources `~/.bash_profile` |
-| `conf/zshrc` | `~/.zshrc` | oh-my-zsh setup with the bullet-train theme |
+| `conf/zshrc` | `~/.zshrc` | oh-my-zsh setup: bullet-train theme, typing hints |
 | `conf/gitconfig` | `~/.gitconfig` | Git aliases and colors |
 | `conf/vimrc` | `~/.vimrc` | Vim options and Vundle plugins |
 | `conf/screenrc` | `~/.screenrc` | GNU screen status line and key bindings |
@@ -33,6 +33,11 @@ Then restart your shell, or `source ~/.zshrc` (`source ~/.bashrc` for bash).
    listed in `conf/vimrc`.
 4. Install [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) plus the
    [bullet-train](https://github.com/caiogondim/bullet-train.zsh) theme.
+5. Install the zsh plugins listed in `conf/zshrc`:
+   [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+   (grey hint from your history while typing, right arrow accepts it) and
+   [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+   (colours the command line, unknown commands turn red).
 
 The script is safe to re-run: files that are already linked are left alone,
 and nothing is ever overwritten in place.

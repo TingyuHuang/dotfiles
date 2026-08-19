@@ -18,6 +18,19 @@ warn () { printf 'warning: %s\n' "$*" >&2; }
 die ()  { printf 'error: %s\n' "$*" >&2; exit 1; }
 has ()  { command -v "$1" > /dev/null 2>&1; }
 
+clone_if_missing ()
+{
+	local name="$1" url="$2" dest="$3"
+
+	if [ -d "${dest}" ]; then
+		log "${name} already installed"
+		return
+	fi
+
+	log "install ${name}"
+	git clone --depth 1 "${url}" "${dest}"
+}
+
 print_var ()
 {
 	echo "UNAME=${UNAME}"
@@ -84,12 +97,8 @@ install_vim_plugins ()
 
 	has vim || { warn "no vim found; skipping vim plugins"; return; }
 
-	if [ -d "${vundle}" ]; then
-		log "Vundle already installed"
-	else
-		log "install Vundle"
-		git clone --depth 1 https://github.com/VundleVim/Vundle.vim.git "${vundle}"
-	fi
+	clone_if_missing "Vundle" \
+		https://github.com/VundleVim/Vundle.vim.git "${vundle}"
 
 	vim +PluginInstall +qall
 }
@@ -123,6 +132,21 @@ install_oh_my_zsh ()
 	rm -rf "${tmp}"
 }
 
+install_zsh_plugins ()
+{
+	local plugins="${HOME}/.oh-my-zsh/custom/plugins"
+
+	# Fish-style grey suggestions from history as you type.
+	clone_if_missing "zsh-autosuggestions" \
+		https://github.com/zsh-users/zsh-autosuggestions.git \
+		"${plugins}/zsh-autosuggestions"
+
+	# Colours commands while typing; unknown ones turn red.
+	clone_if_missing "zsh-syntax-highlighting" \
+		https://github.com/zsh-users/zsh-syntax-highlighting.git \
+		"${plugins}/zsh-syntax-highlighting"
+}
+
 main ()
 {
 	print_var
@@ -138,6 +162,7 @@ main ()
 	link_dotfiles
 	install_vim_plugins
 	install_oh_my_zsh
+	install_zsh_plugins
 
 	log "done. restart your shell to pick up the new config."
 }
