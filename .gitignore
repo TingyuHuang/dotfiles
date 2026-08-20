@@ -1,3 +1,4 @@
-# backup directory
-bak
-bullet-train.zsh
+# Backups made by install.sh
+bak/
+
+.DS_Store
